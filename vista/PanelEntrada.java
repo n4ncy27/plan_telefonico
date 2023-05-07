@@ -80,14 +80,14 @@ public class PanelEntrada extends JPanel {
                 lbLogo = new JLabel(iLogo);
                 lbLogo.setOpaque(true);
                 lbLogo.setBorder(BorderFactory.createRaisedBevelBorder());
-                lbLogo.setBounds(55, 42, 160, 172); 
+                lbLogo.setBounds(55, 42, 165, 172); 
 
                  //Borde y titulo del panel
                  TitledBorder borde = BorderFactory.createTitledBorder("Datos de Entrada");
                 borde.setTitleColor(Color.pink);
                  this.setBorder(borde);
     
-
+                // se agrega el panel
                 this.setLayout(null);
                 this.setBackground(Color.decode("#734b96"));
                 this.setVisible(true);
@@ -121,10 +121,10 @@ public class PanelEntrada extends JPanel {
         }
 
         public static void borrarTf() { // método para borrar los datos de entrada
-                JOptionPane.showMessageDialog(null, "Los datos serán borrados...", "Suma 3 Enteros",
-                                JOptionPane.WARNING_MESSAGE);
-                tfNumero.setText("");
-                cbOperador.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(null, "Los datos serán borrados...", "Advertencia", 
+                                JOptionPane.WARNING_MESSAGE); // se muestra un mensaje de advertencia
+                tfNumero.setText(""); // se borran los datos
+                cbOperador.setSelectedIndex(0); 
                 tfMinutos.setText("");
                 tfCosto.setText("");
                 PanelSalida.taResultados.setText("");

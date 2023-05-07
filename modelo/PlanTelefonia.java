@@ -10,7 +10,7 @@ public class PlanTelefonia {
         // Metodos
         public PlanTelefonia(String numeroCelular, String operadorCelular, Integer cantidadMinutos,
                         Double costoMinuto) {
-                this.numeroCelular = numeroCelular;
+                this.numeroCelular = numeroCelular; 
                 this.operadorCelular = operadorCelular;
                 this.cantidadMinutos = cantidadMinutos;
                 this.costoMinuto = costoMinuto;
@@ -60,15 +60,15 @@ public class PlanTelefonia {
         }
 
         public void calcularCostoTotal() { // metodo
-                if (operadorCelular.equals("Wom")) { //compara si el operador es Wom
-                        costoTotal = 0.5 * (cantidadMinutos * costoMinuto); //
+                if (operadorCelular.equals("WOM")) { //compara si el operador es Wom
+                        costoTotal = 0.5 * (cantidadMinutos * costoMinuto); 
                 } else {
-                        costoTotal = (double) (cantidadMinutos * costoMinuto);
+                        costoTotal = (double) (cantidadMinutos * costoMinuto); 
                 }
         }
-
+        // se agregan los datos
         public String toString() {
-                return "Teléfono celular: " + numeroCelular + "\nEmpresa operador: " + operadorCelular
+                return "Teléfono celular: " + numeroCelular + "\nEmpresa operador: " + operadorCelular 
                                 + "\nMinutos gastados: " + cantidadMinutos + "\nCosto minuto: " + costoMinuto
                                 + "\nCantidad a pagar: " + costoTotal;
 

@@ -13,6 +13,8 @@ public class PanelSalida extends JPanel {
         public static JScrollPane spResultados;
 
         public PanelSalida() {
+
+                // se agregan los resultados
                 taResultados = new JTextArea();
                 taResultados.setFont(new Font("Consolas", Font.PLAIN, 16)); //se agregan los resultados
                 taResultados.setForeground(Color.BLACK);

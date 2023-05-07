@@ -7,47 +7,58 @@ import javax.swing.JOptionPane;
 import modelo.PlanTelefonia;
 import vista.VentanaPrincipal;
 
-public class Controlador implements ActionListener {
-        private VentanaPrincipal miVentanaPrincipal;
+// controlador pueda acceder a los paneles
+public class Controlador implements ActionListener { 
+        
+        private VentanaPrincipal miVentanaPrincipal; 
         private PlanTelefonia modelo;
 
+
         public Controlador(VentanaPrincipal miVentanaPrincipal, PlanTelefonia modelo) { // constructor
-                this.miVentanaPrincipal = miVentanaPrincipal;
-                this.modelo = modelo;
-                this.miVentanaPrincipal.miPanelProceso.btnCalcular.addActionListener(this);
+                this.miVentanaPrincipal = miVentanaPrincipal; // se agregan los paneles
+                this.modelo = modelo; 
+                // se agregan los botones
+                this.miVentanaPrincipal.miPanelProceso.btnCalcular.addActionListener(this); 
                 this.miVentanaPrincipal.miPanelProceso.btnBorrar.addActionListener(this);
                 this.miVentanaPrincipal.miPanelProceso.btnSalir.addActionListener(this);
         }
-
-        public void actionPerformed(ActionEvent ae) {
+        // se agregan los metodos
+        public void actionPerformed(ActionEvent ae) {  
                 String comando = ae.getActionCommand();
 
-                if (comando.equals("calcularMayor")) {
+                if (comando.equals("calcularMayor")) { 
                         try {
-                                this.modelo.setNumeroCelular(vista.PanelEntrada.getTfNumero());
-                                this.modelo.setOperadorCelular(vista.PanelEntrada.getTfOperador());
+                                // se agregan los datos
+                                this.modelo.setNumeroCelular(vista.PanelEntrada.getTfNumero()); 
+                                this.modelo.setOperadorCelular(vista.PanelEntrada.getTfOperador()); 
                                 this.modelo.setCantidadMinutos(Integer.parseInt(vista.PanelEntrada.getTfMinutos()));
                                 this.modelo.setCostoMinuto(Double.parseDouble(vista.PanelEntrada.getTfCosto()));
                                 this.modelo.calcularCostoTotal();
-                                if (this.modelo.getOperadorCelular().equals("Wom")) {
+                                // Operadores de celular
+                                if (this.modelo.getOperadorCelular().equals("WOM")) { 
                                         this.miVentanaPrincipal.miPanelSalida
-                                                        .mostrarResultados(this.modelo.toString()
+                                                        .mostrarResultados(this.modelo.toString() 
                                                                         + "\nCantidad de descuento: 50%");
+                                // si no es WOM
                                 } else {
-                                        this.miVentanaPrincipal.miPanelSalida
+                                        this.miVentanaPrincipal.miPanelSalida 
                                                         .mostrarResultados(this.modelo.toString()
                                                                         + "\nCantidad de descuento: 0%");
                                 }
-                        } catch (Exception ex) {
+                        //se agrega para sabe si los datos son incorrectos 
+                        } catch (Exception ex) { 
                                 JOptionPane.showMessageDialog(null, "Datos incorrectos.\nLos datos deben ser enteros!",
-                                                "Suma 3 Enteros", JOptionPane.ERROR_MESSAGE);
-                                vista.PanelEntrada.borrarTf();
+                                                "Suma 3 Enteros", JOptionPane.ERROR_MESSAGE); // mensaje de error
+                                vista.PanelEntrada.borrarTf(); // se borran los datos
                         }
+                // esto es para borrar los datos del panel entrada
                 } else if (comando.equals("borrarTexto")) {
                         vista.PanelEntrada.borrarTf();
                         this.miVentanaPrincipal.miPanelSalida.borrarTa();
+
+                // esto sirve para cerrar la ventana
                 } else if (comando.equals("cerrarVentana")) {
-                        JOptionPane.showMessageDialog(null, "El programa se cerrará...", "Suma 3 Enteros",
+                        JOptionPane.showMessageDialog(null, "El programa se cerrará...", "Advertencia",
                                         JOptionPane.WARNING_MESSAGE);
                         System.exit(0);
                 }

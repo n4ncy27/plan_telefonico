@@ -9,5 +9,8 @@ Usar minimo dos metodos constructores
 
 
 # Diagrama de clases
+![diagramaClases](diagrama.png "diagramaClases")
 
 # Funcionamiento
+
+![funcionamiento](Interfaz.png "funcionamiento")
