@@ -12,9 +12,9 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.border.TitledBorder;
 
-public class PanelEntrada extends JPanel {
-        private JLabel lbTitulo;
-        private JLabel lbNumero;
+public class PanelEntrada extends JPanel { 
+        private JLabel lbTitulo; 
+        private JLabel lbNumero; 
         private JLabel lbOperador;
         private JLabel lbMinutos;
         private JLabel lbCosto;
@@ -26,11 +26,12 @@ public class PanelEntrada extends JPanel {
         private static JTextField tfCosto;
 
         public PanelEntrada() {
+                // se agrega el titulo
                 lbTitulo = new JLabel("Plan de telefonia WOM ", SwingConstants.CENTER);
                 lbTitulo.setFont(new Font("Verdana", Font.BOLD, 20));
                 lbTitulo.setForeground(Color.BLACK);
                 lbTitulo.setBounds(0, 10, 558, 30);
-
+                // se agrega el numero
                 lbNumero = new JLabel("Número =");
                 lbNumero.setFont(new Font("Serif", Font.PLAIN, 18));
                 lbNumero.setForeground(Color.BLACK);
@@ -46,7 +47,7 @@ public class PanelEntrada extends JPanel {
                 lbOperador.setForeground(Color.BLACK);
                 lbOperador.setBounds(230, 95, 480, 30);
 
-                // se crea el combo box
+                // se crea el combo box 
                 String[] empresasOperadores = { "Avantel", "Claro", "Movilujo", "Tigo", "WOM" }; // se crea el arreglo
                 cbOperador = new JComboBox<>(empresasOperadores); //
                 cbOperador.setSelectedIndex(0);
@@ -103,7 +104,7 @@ public class PanelEntrada extends JPanel {
                 this.add(lbLogo);
 
         }
-
+        // métodos para obtener los datos de entrada
         public static String getTfNumero() {
                 return tfNumero.getText();
         }

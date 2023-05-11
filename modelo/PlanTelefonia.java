@@ -10,14 +10,14 @@ public class PlanTelefonia {
         // Metodos
         public PlanTelefonia(String numeroCelular, String operadorCelular, Integer cantidadMinutos,
                         Double costoMinuto) {
-                this.numeroCelular = numeroCelular; 
+                this.numeroCelular = numeroCelular;  // se agregan los datos
                 this.operadorCelular = operadorCelular;
                 this.cantidadMinutos = cantidadMinutos;
                 this.costoMinuto = costoMinuto;
         }
 
-        public PlanTelefonia() {
-                this.numeroCelular = "";
+        public PlanTelefonia() { 
+                this.numeroCelular = ""; // se agregan los datos para que no quede vacio el panel
                 this.operadorCelular = "";
                 this.cantidadMinutos = 0;
                 this.costoMinuto = 0.0;
@@ -67,10 +67,10 @@ public class PlanTelefonia {
                 }
         }
         // se agregan los datos
-        public String toString() {
+        public String toString() { 
                 return "Teléfono celular: " + numeroCelular + "\nEmpresa operador: " + operadorCelular 
                                 + "\nMinutos gastados: " + cantidadMinutos + "\nCosto minuto: " + costoMinuto
-                                + "\nCantidad a pagar: " + costoTotal;
+                                + "\nCantidad a pagar: " + costoTotal; // se agregan los datos para que se muestren en el panel salida
 
         }
 }

@@ -35,20 +35,18 @@ public class Controlador implements ActionListener {
                                 this.modelo.setCostoMinuto(Double.parseDouble(vista.PanelEntrada.getTfCosto()));
                                 this.modelo.calcularCostoTotal();
                                 // Operadores de celular
-                                if (this.modelo.getOperadorCelular().equals("WOM")) { 
-                                        this.miVentanaPrincipal.miPanelSalida
-                                                        .mostrarResultados(this.modelo.toString() 
-                                                                        + "\nCantidad de descuento: 50%");
+                                if (this.modelo.getOperadorCelular().equals("WOM")) { // si es WOM
+                                        this.miVentanaPrincipal.miPanelSalida 
+                                                        .mostrarResultados(this.modelo.toString() + "\nCantidad de descuento: 50%");
                                 // si no es WOM
                                 } else {
                                         this.miVentanaPrincipal.miPanelSalida 
-                                                        .mostrarResultados(this.modelo.toString()
-                                                                        + "\nCantidad de descuento: 0%");
+                                                        .mostrarResultados(this.modelo.toString() + "\nCantidad de descuento: 0%");
                                 }
                         //se agrega para sabe si los datos son incorrectos 
-                        } catch (Exception ex) { 
+                        } catch (Exception ex) { // si los datos son incorrectos 
                                 JOptionPane.showMessageDialog(null, "Datos incorrectos.\nLos datos deben ser enteros!",
-                                                "Suma 3 Enteros", JOptionPane.ERROR_MESSAGE); // mensaje de error
+                                                "Suma 3 Enteros", JOptionPane.ERROR_MESSAGE); // mensaje de error 
                                 vista.PanelEntrada.borrarTf(); // se borran los datos
                         }
                 // esto es para borrar los datos del panel entrada

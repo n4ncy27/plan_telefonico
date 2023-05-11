@@ -18,7 +18,7 @@ public class VentanaPrincipal extends JFrame {
                 miPanelSalida = new PanelSalida();
                 miPanelSalida.setBounds(10, 330, 530, 140);
 
-                this.setTitle("Plan de Telefonía Wom ");
+                this.setTitle("Plan de Telefonía Wom- Nancy Liliana Sáenz Moreno");
                 this.setSize(558, 512);
                 this.setResizable(false);
                 this.setLocationRelativeTo(null);
